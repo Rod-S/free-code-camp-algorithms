@@ -17,12 +17,36 @@
 //     You may need to turn the string into an array before you can reverse it.
 //     Your result must be a string.
 
-function reverseString(str) {
-    let strArr;
-    let revStr;
-    strArr = str.split("");
-    revStr = strArr.reverse().join("").toString();
-    return revStr;
+// function reverseString(str) {
+//     let strArr;
+//     let revStr;
+//     strArr = str.split("");
+//     revStr = strArr.reverse().join("").toString();
+//     return revStr;
+// }
+//
+// console.log(reverseString("hello"));
+
+// Return the factorial of the provided integer.
+//
+//     If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
+//
+//     Factorials are often represented with the shorthand notation n!
+
+function factorialize(num) {
+    if (num == 1 || num == 0) return 1;
+    let currentNum = num;
+    let currentVal = [];
+    let endVal = num;
+    if (num = 1) return 1;
+    while (currentNum > 0) {
+        currentVal.push(currentNum);
+        currentNum -= 1;
+    }
+    for (let i = num -1; i > 0; i--) {
+        endVal *= currentVal[i];
+    }
+    return endVal;
 }
 
-console.log(reverseString("hello"));;
+// console.log(factorialize(5));;
