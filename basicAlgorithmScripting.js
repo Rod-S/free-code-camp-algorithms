@@ -78,7 +78,7 @@ function largestOfFour(arr) {
     arr.forEach((array, i) => {
         let currLg = 0;
         arr[i].forEach((val) => {
-            if (val > currLg) {
+            if (val > currLg || (val < 0) && currLg === 0) {
                 currLg = val;
             }
         })
@@ -87,4 +87,17 @@ function largestOfFour(arr) {
     return lgArr;
 }
 
-largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+// largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+
+// Check if a string (first argument, str) ends with the given target string (second argument, target).
+//
+// This challenge can be solved with the .endsWith() method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
+
+function confirmEnding(str, target) {
+    let indexCompare = str.length - target.length;
+    let slicedStr = str.slice(indexCompare, str.length);
+    if (target == slicedStr) return true;
+    else return false;
+}
+
+confirmEnding("Bastian", "n");
