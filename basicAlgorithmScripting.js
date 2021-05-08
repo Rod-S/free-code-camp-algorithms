@@ -125,5 +125,41 @@ function truncateString(str, num) {
     return str;
 }
 
-truncateString("A-tisket a-tasket A green and yellow basket", 8);
-truncateString("Peter Piper picked a peck of pickled peppers", 11)
+// truncateString("A-tisket a-tasket A green and yellow basket", 8);
+// truncateString("Peter Piper picked a peck of pickled peppers", 11)
+
+// Create a function that looks through an array arr and returns the first element in it that passes a 'truth test'. This means that given an element x, the 'truth test' is passed if func(x) is true. If no element passes the test, return undefined.
+
+function findElement(arr, func) {
+    let num = 0;
+    let found;
+    arr.forEach((e) => {
+        if (func(num) == e) {
+            found = true;
+            return true;
+        }
+    })
+    if (found) return true
+    else return undefined;
+}
+
+// console.log(findElement([0,1,2,3,4], num => num % 2 === 0));;
+
+// function (num) {
+//     return num % 2 === 0;
+// }
+
+// Check if a value is classified as a boolean primitive. Return true or false.
+//
+//     Boolean primitives are true and false.
+
+function booWho(bool) {
+    if (bool === true) {
+        return true
+    } else if (bool === false) {
+        return true
+    } else return false}
+
+booWho(null);
+
+console.log(booWho(null));;
