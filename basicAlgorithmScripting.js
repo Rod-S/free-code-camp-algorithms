@@ -199,4 +199,40 @@ function frankenSplice(arr1, arr2, n) {
     return arr2mod;
 }
 
-frankenSplice([1, 2, 3], [4, 5, 6], 1);
+// frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+// Remove all falsy values from an array.
+//
+//     Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+//
+//     Hint: Try converting each value to a Boolean.
+
+function bouncer(arr) {
+    // let arr1mod;
+    // arr.forEach((e,i)=> {
+    //     // if (!e) {
+    //     //     console.log('false ' + e)
+    //     //     // arr.filter(x=> x == false)
+    //     // } else {
+    //     //     console.log('true ' + e)
+    //     // }
+    //     if (!e) {
+    //         arr1mod = arr.filter(x=> x == e)
+    //     }
+    // })
+    // return arr1mod;
+    let arr1mod;
+    arr.forEach((e,i)=> {
+
+        if (!e || e == 0 || e == undefined || e == "" || e == NaN || e == e) {
+            arr1mod = arr.filter(x=> x)
+        }
+    })
+    return arr1mod;
+
+}
+
+console.log(bouncer([7, "ate", "", false, 9]));
+console.log(bouncer(["a", "b", "c"]));
+console.log(bouncer([false, null, 0, NaN, undefined, ""]));
+console.log(bouncer([null, NaN, 1, 2, undefined]));
