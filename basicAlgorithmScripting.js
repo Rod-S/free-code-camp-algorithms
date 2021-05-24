@@ -258,6 +258,13 @@ getIndexToIns([40, 60], 50);
 //     Lastly, ["Alien", "line"], should return true because all of the letters in line are present in Alien.
 
 function mutation(arr) {
+    let arr1 = arr[0];
+    let arr2 = arr[1];
+
+    arr1.forEach((e, i) => {
+        arr2.includes(e.toLowerCase())
+    });
+
     return arr;
 }
 
@@ -265,22 +272,7 @@ mutation(["hello", "hey"]);
 
 // Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
 
-// function chunkArrayInGroups(arr, size) {
-//     let loopNum = size;
-//     let newArr = [];
-//     let subArr = [];
-//     let currIndex = 0;
-//     while (loopNum > 0) {
-//         subArr = [];
-//         for (let i = 0; i < Math.floor(arr.length / size); i++) {
-//             subArr.push(arr[currIndex]);
-//             currIndex++
-//         }
-//         loopNum--;
-//         newArr.push(subArr);
-//     }
-//     return newArr;
-// }
+
 function chunkArrayInGroups(arr, size) {
     let loopNum = Math.ceil(arr.length / size);
     let newArr = [];
