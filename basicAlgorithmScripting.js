@@ -265,8 +265,40 @@ mutation(["hello", "hey"]);
 
 // Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
 
+// function chunkArrayInGroups(arr, size) {
+//     let loopNum = size;
+//     let newArr = [];
+//     let subArr = [];
+//     let currIndex = 0;
+//     while (loopNum > 0) {
+//         subArr = [];
+//         for (let i = 0; i < Math.floor(arr.length / size); i++) {
+//             subArr.push(arr[currIndex]);
+//             currIndex++
+//         }
+//         loopNum--;
+//         newArr.push(subArr);
+//     }
+//     return newArr;
+// }
 function chunkArrayInGroups(arr, size) {
-    return arr;
+    let loopNum = Math.ceil(arr.length / size);
+    let newArr = [];
+    let subArr = [];
+    let currIndex = 0;
+    while (loopNum > 0) {
+        debugger
+        subArr = [];
+        for (let i = 0; (i < size && arr[currIndex] != undefined); i++) {
+            subArr.push(arr[currIndex]);
+            currIndex++
+        }
+        loopNum--;
+        newArr.push(subArr);
+    }
+    return newArr;
 }
 
-chunkArrayInGroups(["a", "b", "c", "d"], 2);
+console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3));
