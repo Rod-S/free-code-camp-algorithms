@@ -279,7 +279,6 @@ function chunkArrayInGroups(arr, size) {
     let subArr = [];
     let currIndex = 0;
     while (loopNum > 0) {
-        debugger
         subArr = [];
         for (let i = 0; (i < size && arr[currIndex] != undefined); i++) {
             subArr.push(arr[currIndex]);
